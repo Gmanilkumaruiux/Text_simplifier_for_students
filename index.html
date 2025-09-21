@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Text Simplifier -- Student Tool</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-theme="light">
+
+  <header>
+    <h1>📖 Text Simplifier</h1>
+    <div class="tiny">Make writing easier to read -- for students</div>
+    <button id="themeToggle" title="Toggle theme">🌙</button>
+  </header>
+
+  <nav class="main-nav">
+    <button id="nav-home" class="active">Home</button>
+    <button id="nav-simplify">Simplify</button>
+    <button id="nav-glossary">Glossary</button>
+  </nav>
+
+  <main class="container">
+
+    <section id="page-home" class="page">
+      
+      <div class="hero-main">
+        <h2>Turn Complex Text into Simple Language ✨</h2>
+        <p class="lead">Simplify difficult words, break down long sentences, and present ideas with clarity. Perfect for school, college, and research.</p>
+      </div>
+
+      <div class="interactive-demo card">
+        <div class="demo-box before">
+          <label>Before</label>
+          <p id="demo-before-text">Utilize this tool to ascertain the broader implications prior to the implementation of the new methodology.</p>
+        </div>
+        <button id="demo-simplify-btn" class="btn">Simplify →</button>
+        <div class="demo-box after">
+          <label>After</label>
+          <p id="demo-after-text">...</p>
+        </div>
+      </div>
+
+      <div class="feature-showcase">
+        <div class="feature-card card">
+          <div class="feature-icon">🚀</div>
+          <h3>Instant Simplification</h3>
+          <p>Our powerful algorithm replaces complex vocabulary with easy-to-understand words in seconds.</p>
+        </div>
+        <div class="feature-card card">
+          <div class="feature-icon">📊</div>
+          <h3>Text Analysis</h3>
+          <p>Get real-time statistics like word count, reading time, and character count as you type.</p>
+        </div>
+      </div>
+
+      <div class="final-cta card">
+        <h3>Ready to get started?</h3>
+        <p>Jump in and make your writing clear and effective.</p>
+        <button class="btn" data-go="#simplify">Simplify My Text Now</button>
+      </div>
+
+    </section>
+    <section id="page-simplify" class="page" style="display:none;">
+      <div class="simplify-grid-container card">
+        <div class="controls-column">
+          <h2>Simplify Text</h2>
+         <h4> <p class>Paste your content below to receive a simplified and more polished version.</p></h4>
+        </div>
+        <div class="main-content-column">
+          <label for="inputText">Your Text</label>
+          <textarea id="inputText" placeholder="Paste your complex paragraph here..."></textarea>
+          <div id="text-stats" class="text-stats">
+            <span>Words: 0</span>
+            <span>Characters: 0</span>
+            <span>Reading Time: 0 min</span>
+          </div>
+          <div class="controls">
+            <button id="simplifyBtn" class="btn">
+              <span class="btn-text">Simplify</span>
+              <div class="spinner" id="spinner" style="display: none;"></div>
+            </button>
+            <button id="copyBtn" class="btn alt">Copy Output</button>
+            <button id="clearAllBtn" class="btn alt">Clear All</button>
+          </div>
+          <div class="output-container">
+            <div class="output-header">
+              <label>Simplified Output</label>
+            </div>
+            <div id="outputText" class="output"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-glossary" class="page" style="display:none;">
+      <div class="card">
+        <h3>Full Glossary</h3>
+        <div class="glossary-search">
+          <input id="glossSearch" placeholder="Search for a word..." />
+        </div>
+        <div class="glossary-list" id="glossaryListFull"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Text Simplifier • All rights reserved.</p>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+</body>
+</html>
